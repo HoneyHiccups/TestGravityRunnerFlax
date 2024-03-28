@@ -1,0 +1,11 @@
+﻿{
+  "profiles": {
+    "Game": {
+      "commandName": "Executable",
+      "workingDirectory": "G:/Flax Projects/Testing",
+      "executablePath": "G:/Program Files (x86)/Flax/Flax_1.7/Binaries/Editor/Win64/Development/FlaxEditor.exe",
+      "commandLineArgs": "-project \"G:/Flax Projects/Testing\"",
+      "nativeDebugging": false
+    }
+  }
+}
