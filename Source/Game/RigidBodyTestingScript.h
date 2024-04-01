@@ -10,32 +10,19 @@
 #include "Engine/Core/Types/Variant.h"
 #include "Engine/Core/Math/Matrix.h"
 
-API_CLASS() class GAME_API PlayerControler_Body : public Script
+API_CLASS() class GAME_API RigidBodyTestingScript : public Script
 {
 API_AUTO_SERIALIZATION();
-DECLARE_SCRIPTING_TYPE(PlayerControler_Body);
+DECLARE_SCRIPTING_TYPE(RigidBodyTestingScript);
 
+API_FIELD() ScriptingObjectReference<RigidBody> testingbody = nullptr;
+API_FIELD() Vector3 Force = Vector3(0.0f, 0.0f, 0.0f);
+float elaspedtime = 1.0f;
 
-API_FIELD() ScriptingObjectReference<RigidBody> PlayerRigidBody = nullptr;
-API_FIELD() Vector3 PlayerBodyOfset = (0.0f, 10.0f, 0.0f);
-API_FIELD() ScriptingObjectReference<Actor> CamraPiv = nullptr;
-API_FIELD() ScriptingObjectReference<Actor> SubPiv = nullptr;
-
-API_FIELD() float MouseSenes = 0.5f;
-
-
-//Actor* PivCamraPiv;
-
-Transform CurrentTras;
-Float2 MousePoDelta;
-Vector3 ForwardVec;
-Vector3 UpVec;
-
+bool opengate[100] = { false };
     // [Script]
     void OnEnable() override;
     void OnDisable() override;
     void OnUpdate() override;
     void OnFixedUpdate() override;
-
-
 };
