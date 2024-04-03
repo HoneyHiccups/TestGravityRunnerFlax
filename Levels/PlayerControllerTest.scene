@@ -1,0 +1,266 @@
+{
+	"ID": "82a9b01f48daea960a619abb00d1c7bc",
+	"TypeName": "FlaxEngine.SceneAsset",
+	"EngineBuild": 6407,
+	"Data": [
+		{
+			"ID": "82a9b01f48daea960a619abb00d1c7bc",
+			"TypeName": "FlaxEngine.Scene",
+			"LightmapSettings": {
+				"IndirectLightingIntensity": 1.0,
+				"GlobalObjectsScale": 1.0,
+				"ChartsPadding": 3,
+				"AtlasSize": 1024,
+				"BounceCount": 1,
+				"CompressLightmaps": true,
+				"UseGeometryWithNoMaterials": true,
+				"Quality": 10
+			}
+		},
+		{
+			"ID": "2cc2c42c4703fab9786d5fad6eddebef",
+			"TypeName": "FlaxEngine.DirectionalLight",
+			"ParentID": "82a9b01f48daea960a619abb00d1c7bc",
+			"Name": "Sun",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 160.0,
+					"Z": 0.0
+				},
+				"Orientation": {
+					"X": 0.3826834559440613,
+					"Y": 0.0,
+					"Z": 0.0,
+					"W": 0.9238795042037964
+				}
+			}
+		},
+		{
+			"ID": "ee814ea142125966a9dc47a6d26f5485",
+			"TypeName": "FlaxEngine.Sky",
+			"ParentID": "82a9b01f48daea960a619abb00d1c7bc",
+			"Name": "Sky",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 150.0,
+					"Z": 0.0
+				}
+			},
+			"Sun": "2cc2c42c4703fab9786d5fad6eddebef"
+		},
+		{
+			"ID": "a95347c2416a5e5fb11358942bb46ee3",
+			"TypeName": "FlaxEngine.SkyLight",
+			"ParentID": "82a9b01f48daea960a619abb00d1c7bc",
+			"Name": "SkyLight",
+			"Brightness": 2.5,
+			"CustomTexture": "c54410104ff39427bc11e5bc761d66b0"
+		},
+		{
+			"ID": "a8af1d624e5b4047b317dfa6ac4521f4",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "82a9b01f48daea960a619abb00d1c7bc",
+			"Name": "Floor",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 0.0,
+					"Z": -1216.466064453125
+				},
+				"Scale": {
+					"X": 25.0,
+					"Y": 0.5,
+					"Z": 25.0
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "90b256b34580a1a3c8057c9b424a2f12",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "9b9960854edf66763c4ce3be17e0a785",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "a8af1d624e5b4047b317dfa6ac4521f4",
+			"Name": "BoxCollider"
+		},
+		{
+			"ID": "b68f21594a670654c6e86888e18320a8",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "1eef12d24217fcea9593c9ad6ea98a4d",
+			"ParentID": "82a9b01f48daea960a619abb00d1c7bc",
+			"Name": "PlayerPawn",
+			"Transform": {
+				"Translation": {
+					"X": -70.91091918945313,
+					"Y": 387.65997314453127,
+					"Z": -130.2835693359375
+				}
+			}
+		},
+		{
+			"ID": "916c21964a236b3b9ebe3bae0fc5ed5e",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "68b8339d41a02ed4f44a7db60dffd5f2",
+			"ParentID": "b68f21594a670654c6e86888e18320a8",
+			"V": {}
+		},
+		{
+			"ID": "9840d5614a98ffb8c998baa3f9f6b509",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "a9c9693343f345b1eb19ef9816b41ff5",
+			"ParentID": "b68f21594a670654c6e86888e18320a8"
+		},
+		{
+			"ID": "437c80f54679b6326361aa91c8eb4e47",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "7fd2ad2a421704d18db7609346b6e398",
+			"ParentID": "9840d5614a98ffb8c998baa3f9f6b509",
+			"Mass": 33.51032257080078,
+			"AngularDamping": 20.0,
+			"MaxAngularVelocity": 15.0
+		},
+		{
+			"ID": "09b5eb424ac2fa1d61a7b295a566e63b",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "02c9e6f141b1695d5d9ddeacf8c1ec0c",
+			"ParentID": "437c80f54679b6326361aa91c8eb4e47"
+		},
+		{
+			"ID": "2d35ac574c1706b38d6cf6a02ceccf51",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "03d2586740e7914474d9fea2079af0e4",
+			"ParentID": "09b5eb424ac2fa1d61a7b295a566e63b",
+			"Buffer": {
+				"Entries": [
+					{}
+				]
+			}
+		},
+		{
+			"ID": "093ca102413bc6eb702f23ad62019f61",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "1020cd664593f084c781bf88abdfccd1",
+			"ParentID": "9840d5614a98ffb8c998baa3f9f6b509"
+		},
+		{
+			"ID": "810b8eae462d5ae6192a79943dd8cf90",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "54fec17744610e7a786189b51939fc66",
+			"ParentID": "093ca102413bc6eb702f23ad62019f61",
+			"PlayerRigidBody": "437c80f54679b6326361aa91c8eb4e47",
+			"CamraPiv": "692294244002bace117ab3b6abae30c3",
+			"SubPiv": "b421070c4c189de173420c9065ab5813",
+			"PlayerMeshHolder": "a297045a43047394025c9e971ae0bb42"
+		},
+		{
+			"ID": "a297045a43047394025c9e971ae0bb42",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "f32516e541fffcb2c7954ea39cbd06f1",
+			"ParentID": "093ca102413bc6eb702f23ad62019f61"
+		},
+		{
+			"ID": "3ed7b54947ce19fd90b7b08214550571",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "968e1d554f29b012717ec491fd395cab",
+			"ParentID": "a297045a43047394025c9e971ae0bb42",
+			"Buffer": {
+				"Entries": [
+					{}
+				]
+			}
+		},
+		{
+			"ID": "eea3843545ef254279b1419f67dc3a4c",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "a906b10c48dfec9fd7b51d919f72feb7",
+			"ParentID": "a297045a43047394025c9e971ae0bb42",
+			"Buffer": {
+				"Entries": [
+					{}
+				]
+			}
+		},
+		{
+			"ID": "692294244002bace117ab3b6abae30c3",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "3de8f7a14cfca9590aa59bab4d167006",
+			"ParentID": "093ca102413bc6eb702f23ad62019f61"
+		},
+		{
+			"ID": "b421070c4c189de173420c9065ab5813",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "f7c0703645b7e5f8049a909fa96a4594",
+			"ParentID": "692294244002bace117ab3b6abae30c3"
+		},
+		{
+			"ID": "c81ae15f4d69afd35acd8198ac45203e",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "0fabcd2549aa2a9f59ab80a08c5458e1",
+			"ParentID": "b421070c4c189de173420c9065ab5813",
+			"Transform": {
+				"Translation": {
+					"X": 83.03764343261719,
+					"Y": 32.82415771484375,
+					"Z": -372.94244384765627
+				}
+			}
+		},
+		{
+			"ID": "0c0edcbb4e85598fa774f48d07363c1b",
+			"PrefabID": "f58e48d84d1dc1a76ccee6832b4c5510",
+			"PrefabObjectID": "c96a18c741232e1f42f48e9e2ebab637",
+			"ParentID": "b421070c4c189de173420c9065ab5813"
+		},
+		{
+			"ID": "d13993b142bdca7db225afabc377f7b7",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "82a9b01f48daea960a619abb00d1c7bc",
+			"Name": "Floor 0",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 0.0,
+					"Z": 28.651321411132814
+				},
+				"Orientation": {
+					"X": -0.34517285227775576,
+					"Y": 0.0,
+					"Z": 0.0,
+					"W": 0.9385392069816589
+				},
+				"Scale": {
+					"X": 25.0,
+					"Y": 0.5,
+					"Z": 25.0
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "90b256b34580a1a3c8057c9b424a2f12",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "7ef67eb649ad2faa70314e995594ea8f",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "d13993b142bdca7db225afabc377f7b7",
+			"Name": "BoxCollider"
+		}
+	]
+}
