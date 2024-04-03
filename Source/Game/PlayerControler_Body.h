@@ -20,6 +20,7 @@ API_FIELD() ScriptingObjectReference<RigidBody> PlayerRigidBody = nullptr;
 API_FIELD() Vector3 PlayerBodyOfset = (0.0f, 10.0f, 0.0f);
 API_FIELD() ScriptingObjectReference<Actor> CamraPiv = nullptr;
 API_FIELD() ScriptingObjectReference<Actor> SubPiv = nullptr;
+API_FIELD() ScriptingObjectReference<Actor> PlayerMeshHolder = nullptr;
 
 API_FIELD() float MouseSenes = 0.5f;
 
@@ -30,6 +31,12 @@ Transform CurrentTras;
 Float2 MousePoDelta;
 Vector3 ForwardVec;
 Vector3 UpVec;
+Vector3 RightVec;
+Vector3 WishDir;
+Vector3 LookAtLoc;
+
+
+float BaseAngleDamp;
 
     // [Script]
     void OnEnable() override;

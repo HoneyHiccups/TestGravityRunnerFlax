@@ -14,7 +14,7 @@ PlayerControler_Body::PlayerControler_Body(const SpawnParams& params)
 void PlayerControler_Body::OnEnable()
 {
     // Here you can add code that needs to be called when script is enabled (eg. register for events)
-    //if (PlayerRigidBody == nullptr) { return; }
+    BaseAngleDamp = PlayerRigidBody->GetAngularDamping();
 }
 
 void PlayerControler_Body::OnDisable()
@@ -40,6 +40,14 @@ void PlayerControler_Body::OnUpdate()
     // this is the horzantal piv
     CamraPiv->SetOrientation(CamraPiv->GetTransform().Orientation.Euler(CamraPiv->GetTransform().Orientation.GetEuler().X, CamraPiv->GetTransform().Orientation.GetEuler().Y + MousePoDelta.X, 0.0f));
     
+//    Vector3 Lookat = PlayerRigidBody->GetLinearVelocity();
+//    Lookat.Normalize();
+//    Lookat = Lookat * 1220.0f;
+//    Lookat = PlayerMeshHolder->GetPosition() + Lookat;   
+//    PlayerMeshHolder->LookAt(Lookat);
+    
+    PlayerMeshHolder->SetOrientation(CamraPiv->GetOrientation());
+
     //rots second and mackes sure that its only roting 85 degs 
     float tempx = Math::Clamp<float>(SubPiv->GetTransform().Orientation.GetEuler().X + MousePoDelta.Y, -85.0f, 85.0f);
 
@@ -54,28 +62,18 @@ void PlayerControler_Body::OnFixedUpdate() {
 
     Vector2 InputDir =  Float2(Input::GetAxis(String("Vertical")), Input::GetAxis(String("Horizontal")));
 
-    Vector3 MoveDir = Vector3(InputDir.X, 0.0f, InputDir.Y*-1.0f);
-    //InputDir.Normalize();
-    MoveDir.Normalize();
-    ForwardVec = CamraPiv->GetTransform().GetForward();
-    UpVec = CamraPiv->GetTransform().GetUp();
+    RightVec = InputDir.Y * CamraPiv->GetTransform().GetForward() *-1.0f; // I know I am getting forward vec butt cuss feet are ball this is what is needed
+    ForwardVec = InputDir.X * CamraPiv->GetTransform().GetRight();
+    WishDir = ForwardVec + RightVec;
+    WishDir.Normalize();
 
-    //Need to get the angle so that we can rot, im not sure I think I am thinking about this wrong
-    //WIll think while I sleep brain is tierd, as of now, the ball char for movment feels pretty alright, I do
-    //Have consoners about the way it goses up slaps, atm it gose slower up sloops then walking and faster down
-    //This both feels normal and also alian in games, I just need to make sure that it alawys feel approtie
-    //Most of having a ball instead of feets will be about trying to make things feel approite when they dont
-    //Annother thing that most likly needs to be added is step snapping, else we might get impact bounces
-    //This was alawys going to need to be added, the big question I have though is this really saving time or imporivng
-    //the player experiances im not sure, that is why I am testing and finding things could
-    double angle;
-
-    MoveDir = MoveDir * ForwardVec;
-    MoveDir.Normalize();
-    LOG(Info, "Forwad Vector: {0}", UpVec);
-    if (InputDir != 0.0f) {
-        PlayerRigidBody->AddTorque(MoveDir*3000000.0f, ForceMode::Impulse);
-        LOG(Info,"{0}", MoveDir);
+    if (InputDir != 0.0f)// the if is not needed but maybe I want to tag somthing onto this when like a haulting thing
+        { //Just a sample of idea, maybe use what the liner velocity vec is and dot it to get a damping scaler to make the movent feel more twitchy
+        //PlayerRigidBody->SetAngularDamping(BaseAngleDamp * 0.01f);
+        PlayerRigidBody->AddTorque((WishDir) *3000000.0f, ForceMode::Impulse);
+    }
+    else {
+        //PlayerRigidBody->SetAngularDamping(BaseAngleDamp * 100.0f);
     }
     
    
