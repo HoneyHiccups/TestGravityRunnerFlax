@@ -1,0 +1,206 @@
+{
+	"ID": "f58e48d84d1dc1a76ccee6832b4c5510",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6407,
+	"Data": [
+	{
+		"ID": "1eef12d24217fcea9593c9ad6ea98a4d",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"Name": "Root"
+	},
+	{
+		"ID": "68b8339d41a02ed4f44a7db60dffd5f2",
+		"TypeName": "Game.HideMyMouse",
+		"ParentID": "1eef12d24217fcea9593c9ad6ea98a4d",
+		"V": {}
+	},
+	{
+		"ID": "a9c9693343f345b1eb19ef9816b41ff5",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "1eef12d24217fcea9593c9ad6ea98a4d",
+		"Name": "PlayerPawnRoot"
+	},
+	{
+		"ID": "7fd2ad2a421704d18db7609346b6e398",
+		"TypeName": "FlaxEngine.RigidBody",
+		"ParentID": "a9c9693343f345b1eb19ef9816b41ff5",
+		"Name": "RigidBody",
+		"Mass": 33.0,
+		"AngularDamping": 10.0
+	},
+	{
+		"ID": "02c9e6f141b1695d5d9ddeacf8c1ec0c",
+		"TypeName": "FlaxEngine.SphereCollider",
+		"ParentID": "7fd2ad2a421704d18db7609346b6e398",
+		"Name": "SphereCollider",
+		"Radius": 20.0
+	},
+	{
+		"ID": "03d2586740e7914474d9fea2079af0e4",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "02c9e6f141b1695d5d9ddeacf8c1ec0c",
+		"Name": "Sphere",
+		"Transform": {
+			"Scale": {
+				"X": 0.38999998569488528,
+				"Y": 0.38999995589256289,
+				"Z": 0.38999995589256289
+			}
+		},
+		"Model": "dd86c4724bf734c4959d23b3c74faa05",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "1020cd664593f084c781bf88abdfccd1",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "a9c9693343f345b1eb19ef9816b41ff5",
+		"Name": "MeshHolder",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": 60.35365295410156,
+				"Z": 0.0
+			}
+		}
+	},
+	{
+		"ID": "54fec17744610e7a786189b51939fc66",
+		"TypeName": "Game.PlayerControler_Body",
+		"ParentID": "1020cd664593f084c781bf88abdfccd1",
+		"PlayerRigidBody": "7fd2ad2a421704d18db7609346b6e398",
+		"PlayerBodyOfset": {
+			"X": 0.0,
+			"Y": 60.35365295410156,
+			"Z": 0.0
+		},
+		"CamraPiv": "3de8f7a14cfca9590aa59bab4d167006",
+		"SubPiv": "f7c0703645b7e5f8049a909fa96a4594",
+		"PlayerMeshHolder": "f32516e541fffcb2c7954ea39cbd06f1"
+	},
+	{
+		"ID": "f32516e541fffcb2c7954ea39cbd06f1",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "1020cd664593f084c781bf88abdfccd1",
+		"Name": "PlayerBody",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": 60.35365295410156,
+				"Z": 0.0
+			}
+		}
+	},
+	{
+		"ID": "968e1d554f29b012717ec491fd395cab",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "f32516e541fffcb2c7954ea39cbd06f1",
+		"Name": "Cylinder",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": -60.35365295410156,
+				"Z": 0.0
+			},
+			"Scale": {
+				"X": 0.42000001668930056,
+				"Y": 0.9099999666213989,
+				"Z": 0.42000001668930056
+			}
+		},
+		"Model": "223aa9894e90973780ab508621517526",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "a906b10c48dfec9fd7b51d919f72feb7",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "f32516e541fffcb2c7954ea39cbd06f1",
+		"Name": "Cube",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": -26.235260009765626,
+				"Z": 22.276025772094728
+			},
+			"Scale": {
+				"X": 0.23484349250793458,
+				"Y": 0.2040129154920578,
+				"Z": 0.21299941837787629
+			}
+		},
+		"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "26fa703948d731d16c7a7a9dfe5ca6a3",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "3de8f7a14cfca9590aa59bab4d167006",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "1020cd664593f084c781bf88abdfccd1",
+		"Name": "CamPiv",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": 60.35365295410156,
+				"Z": 0.0
+			}
+		}
+	},
+	{
+		"ID": "f7c0703645b7e5f8049a909fa96a4594",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "3de8f7a14cfca9590aa59bab4d167006",
+		"Name": "SubPiv"
+	},
+	{
+		"ID": "0fabcd2549aa2a9f59ab80a08c5458e1",
+		"TypeName": "FlaxEngine.Camera",
+		"ParentID": "f7c0703645b7e5f8049a909fa96a4594",
+		"Name": "Camera",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": -87.88316345214844,
+				"Z": -471.3612365722656
+			}
+		}
+	},
+	{
+		"ID": "c96a18c741232e1f42f48e9e2ebab637",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "f7c0703645b7e5f8049a909fa96a4594",
+		"Name": "CamMaxLoc",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": -87.88316345214844,
+				"Z": -471.3612365722656
+			}
+		}
+	}
+]
+}
