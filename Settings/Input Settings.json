@@ -181,6 +181,18 @@
 			"Gravity": 1.0,
 			"Scale": -4.0,
 			"Snap": false
+		},
+		{
+			"Name": "Jump",
+			"Axis": 6,
+			"Gamepad": 0,
+			"PositiveButton": 32,
+			"NegativeButton": 0,
+			"DeadZone": 0.19,
+			"Sensitivity": 1.0,
+			"Gravity": 1.0,
+			"Scale": 1.0,
+			"Snap": false
 		}
 	]
 }

@@ -177,10 +177,23 @@
 		"Name": "SubPiv"
 	},
 	{
-		"ID": "0fabcd2549aa2a9f59ab80a08c5458e1",
-		"TypeName": "FlaxEngine.Camera",
+		"ID": "c96a18c741232e1f42f48e9e2ebab637",
+		"TypeName": "FlaxEngine.EmptyActor",
 		"ParentID": "f7c0703645b7e5f8049a909fa96a4594",
-		"Name": "Camera",
+		"Name": "CamLookLoc",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": -87.88316345214844,
+				"Z": 0.0
+			}
+		}
+	},
+	{
+		"ID": "bd49aa2146ea3a770cfcc699f4089b86",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "f7c0703645b7e5f8049a909fa96a4594",
+		"Name": "PlayerCamreaHolder",
 		"Transform": {
 			"Translation": {
 				"X": 0.0,
@@ -190,17 +203,16 @@
 		}
 	},
 	{
-		"ID": "c96a18c741232e1f42f48e9e2ebab637",
-		"TypeName": "FlaxEngine.EmptyActor",
-		"ParentID": "f7c0703645b7e5f8049a909fa96a4594",
-		"Name": "CamMaxLoc",
-		"Transform": {
-			"Translation": {
-				"X": 0.0,
-				"Y": -87.88316345214844,
-				"Z": -471.3612365722656
-			}
-		}
+		"ID": "0fabcd2549aa2a9f59ab80a08c5458e1",
+		"TypeName": "FlaxEngine.Camera",
+		"ParentID": "bd49aa2146ea3a770cfcc699f4089b86",
+		"Name": "Camera"
+	},
+	{
+		"ID": "767030be4a8e394d4c89c38da6e6e4b1",
+		"TypeName": "Game.GravityGun",
+		"ParentID": "0fabcd2549aa2a9f59ab80a08c5458e1",
+		"CastDist": 1200000.0
 	}
 ]
 }
