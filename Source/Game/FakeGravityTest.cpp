@@ -25,6 +25,7 @@ void FakeGravityTest::OnDisable()
 
 void FakeGravityTest::OnFixedUpdate()
 {
+    SimulateGravityPlayer();
     currenttime += Time::GetDeltaTime();
    // LOG(Info, "The time is: {0}", currenttime);
    //LOG(Info, "The Frame time is: {0}", Time::GetDeltaTime());
@@ -56,7 +57,7 @@ bool FakeGravityTest::AddToIndex(ScriptingObjectReference<RigidBody> bodyref, ch
             if (AOEBODYS[i] == nullptr) {
                 AOEBODYS[i] = bodyref;
                 AOEBODYS[i]->SetEnableGravity(false);
-                //LOG(Info, "Jsut added body with type A: {0}", AOEBODYS[i]->GetName());
+                LOG(Info, "Jsut added body with type A: {0}", AOEBODYS[i]->GetName());
                 return true;
             }
         }
@@ -68,7 +69,7 @@ bool FakeGravityTest::AddToIndex(ScriptingObjectReference<RigidBody> bodyref, ch
             if (AOEBODYS[i] == nullptr) {
                 AOEBODYS[i] = bodyref;
                 AOEBODYS[i]->SetEnableGravity(false);
-                //LOG(Info, "Jsut added body with type P: {0}", AOEBODYS[i]->GetName());
+                LOG(Info, "Jsut added body with type P: {0}", AOEBODYS[i]->GetName());
                 return true;
             }
         }
@@ -76,7 +77,7 @@ bool FakeGravityTest::AddToIndex(ScriptingObjectReference<RigidBody> bodyref, ch
     return false;
 }
 
-void FakeGravityTest::SimulateGravityAOE() {
+void FakeGravityTest::SimulateGravityAOE() { //needs to be noted this is only for cosmectic stuff;
     if (CurrentType == 'A') {
         for (int i = 0; i < 999; i++) {
             if (i > AOELISTINDEX) {
@@ -136,3 +137,29 @@ bool FakeGravityTest::NewGravityDir(Float3 dir, char type) {
     return false;
 }
 //
+
+void FakeGravityTest::SimulateGravityPlayer() {
+    if (PlayerBody != nullptr) {
+        if (PlayerBody->GetEnableGravity() == false) {
+            PlayerBody->AddForce(PlayerGravityDir * (PlayerBody->GetMass()), ForceMode::Force);
+        }
+
+    }
+    
+}
+
+void FakeGravityTest::SetPlayerPlayerGravity(Vector3 GravityDir) {
+    if (GravityDir.IsNormalized()) {
+        PlayerGravityDir = GravityDir * GravityScale;
+    }
+    else {
+        PlayerGravityDir = GravityDir;
+    }
+}
+
+void FakeGravityTest::SetPlayerRef(RigidBody* Rigid) {
+    if (Rigid != nullptr) {
+        PlayerBody = Rigid;
+    }
+}
+

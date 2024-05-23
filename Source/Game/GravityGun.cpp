@@ -56,6 +56,7 @@ bool GravityGun::PickObject() {
         if (ObjectPtr->GetType().ToString() == String("FlaxEngine.RigidBody")) {
             BodyPtr = dynamic_cast<RigidBody*>(ObjectPtr);
             if (BodyPtr->GetMass() < grab_strength && BodyPtr->GetEnableGravity() == true) {
+                LOG(Info, "Grabbed thingy");
                 //BodyPtr->AddForce(ForwardVector * BodyPtr->GetMass() * 300.0f, ForceMode::Impulse);
                 BodyPtr->SetEnableGravity(false);
                 GravityMangerptr->AddToIndex(BodyPtr, 'A');

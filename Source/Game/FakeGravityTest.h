@@ -22,6 +22,8 @@ API_CLASS() class GAME_API FakeGravityTest : public Script
     Vector3 AOE_Gravity_Dir = Vector3(0.0f, 0.0f, 0.f);
 
     Vector3 AttratorPoint = Vector3(0.0f, 0.0f, 0.0f);
+
+    Vector3 PlayerGravityDir;
     
 
 
@@ -40,7 +42,11 @@ API_CLASS() class GAME_API FakeGravityTest : public Script
     void OnFixedUpdate() override;
 
     void SimulateGravityAOE();
+    void SimulateGravityPlayer();
 public:
+    RigidBody* PlayerBody = nullptr;
     bool NewGravityDir(Float3 dir, char type);
     bool AddToIndex(ScriptingObjectReference<RigidBody> bodyref, char type);
+    void SetPlayerRef(RigidBody* Rigid);
+    void SetPlayerPlayerGravity(Vector3 GravityDir);
 };
